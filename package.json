@@ -1,0 +1,37 @@
+{
+  "name": "twipsi",
+  "version": "0.8.1",
+  "description": "Application development based on twipsi framework",
+  "private": true,
+  "mode": "development",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twipsi/twipsi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twipsi/twipsi/issues"
+  },
+  "homepage": "https://github.com/twipsi/twipsi#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21"
+  }
+}

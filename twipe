@@ -1,0 +1,74 @@
+#!/usr/bin/env php
+<?php
+
+/*
+- -----------------------------------------------------------------------------
+- Define The Application Start Time
+- -----------------------------------------------------------------------------
+- Define the start time so we can pass it later to the debugger.
+-
+*/
+
+define('DEBUG_START', microtime(true));
+
+/*
+- -----------------------------------------------------------------------------
+- Require Auto loader
+- -----------------------------------------------------------------------------
+- load composers autoload module to resolve namespace class loading.
+-
+*/
+
+require  __DIR__.'/vendor/autoload.php';
+
+/*
+- -----------------------------------------------------------------------------
+- Build The Application
+- -----------------------------------------------------------------------------
+- Construct the application interface to utilize the framework foundation.
+-
+*/
+
+$app = require_once __DIR__.'/boot/app.php';
+
+/*
+- -----------------------------------------------------------------------------
+- Bind Console Kernel To The Application
+- -----------------------------------------------------------------------------
+- Bind the console kernel interface to the application manager.
+-
+*/
+
+$app->keep('console', Twipsi\Foundation\Console\Kernel::class);
+
+/*
+- -----------------------------------------------------------------------------
+- Create Console I/O
+- -----------------------------------------------------------------------------
+- Create the symphony input/output instances
+-
+*/
+
+$input = new Symfony\Component\Console\Input\ArgvInput;
+$output = new Symfony\Component\Console\Output\ConsoleOutput;
+
+/*
+- -----------------------------------------------------------------------------
+- Run Twipsi Command
+- -----------------------------------------------------------------------------
+- Run the command line commands through the kernel.
+-
+*/
+
+$status = $app->console->run($input, $output);
+
+/*
+- -----------------------------------------------------------------------------
+- Terminate Twipsi Command
+- -----------------------------------------------------------------------------
+- Shutdown the application and return the output.
+-
+*/
+
+$app->console->terminate($input, $status);
+exit($status);

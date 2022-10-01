@@ -1,2 +1,2 @@
-# Twipsi
- Application Layer based on twipsi framework
+# Application
+ Application development based on twipsi framework

@@ -1,0 +1,9 @@
+/boot/cache
+/node_modules
+/public/assets
+/public/vendor
+/public/storage
+/vendor
+.env
+.phpunit.result.cache
+/.idea

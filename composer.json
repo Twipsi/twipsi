@@ -1,0 +1,42 @@
+{
+  "name": "twipsi/twipsi",
+  "version": "0.8.1",
+  "type": "project",
+  "description": "The Twipsi PHP MVC Framework",
+  "keywords": ["twipsi","mvc","framework"],
+  "homepage": "http://www.github.com/twipsi/twipsi",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Petrik Gábor",
+          "email": "admin@twipsi.com"
+      }
+  ],
+  "require": {
+    "php": "^8.1.0",
+    "twipsi/framework": "^0.8"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.4.4",
+    "phpunit/phpunit": "^9",
+    "phpstan/phpstan": "^1.4"
+  },
+  "autoload": {
+      "psr-4": {
+          "App\\": "app/",
+          "Twipsi\\": "Twipsi/"
+      }
+  },
+  "autoload-dev": {
+      "psr-4": {
+          "Tests\\": "tests/"
+      }
+  },
+  "config": {
+      "optimize-autoloader": true,
+      "preferred-install": "dist",
+      "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

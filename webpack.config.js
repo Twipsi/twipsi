@@ -1,22 +1,34 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+
 module.exports = {
-  entry: './resources/js/app.js',
-  output: {
-    filename: '[name].[contenthash].bundle.js',
-    path: __dirname + '/public/build',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+      entry: './resources/js/app.js',
+      output: {
+            clean: true,
+            filename: '[name].bundle.js',
+            path: __dirname + '/public/build',
       },
-    ],
-  },
+      plugins: [
+            new MiniCssExtractPlugin({
+                  filename: "[name].bundle.css",
+            }),
+      ],
+      module: {
+            rules: [
+                  {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                              { loader: MiniCssExtractPlugin.loader},
+                              "css-loader", "sass-loader",
+                        ],
+                  },
+            ],
+      },
+      mode: 'development',
+      devServer: {
+            static: {
+                  directory: __dirname + '/public/',
+            },
+            open: true
+      }
 };

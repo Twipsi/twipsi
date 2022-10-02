@@ -1,8 +1,9 @@
-/boot/cache
+/boot/cache/.*
 /node_modules
-/public/assets
-/public/vendor
-/public/storage
+/public/assets/.*
+/public/build/.*
+/public/storage/.*
+/public/media/.*
 /vendor
 .env
 .phpunit.result.cache

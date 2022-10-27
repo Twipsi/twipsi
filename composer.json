@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "^8.1.0",
-    "twipsi/framework": "^0.8"
+    "twipsi/framework": "^0.8.2"
   },
   "require-dev": {
     "mockery/mockery": "^1.4.4",

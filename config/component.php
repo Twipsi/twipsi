@@ -16,6 +16,7 @@ return [
     // Twipsi framework components.
     Twipsi\Foundation\ComponentProviders\AuthenticationProvider::class,
     Twipsi\Foundation\ComponentProviders\CookieProvider::class,
+    Twipsi\Foundation\ComponentProviders\ConsoleProvider::class,
     Twipsi\Foundation\ComponentProviders\DatabaseProvider::class,
     Twipsi\Foundation\ComponentProviders\EncrypterProvider::class,
     Twipsi\Foundation\ComponentProviders\MailerProvider::class,
@@ -27,9 +28,9 @@ return [
     Twipsi\Foundation\ComponentProviders\TranslatorProvider::class,
     Twipsi\Foundation\ComponentProviders\ValidatorProvider::class,
     Twipsi\Foundation\ComponentProviders\ViewProvider::class,
-    App\Components\Bal::class,
 
     // Application components.
+    App\Console\ApplicationConsole::class,
   ],
 
   /*
